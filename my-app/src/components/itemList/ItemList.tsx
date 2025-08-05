@@ -1,3 +1,4 @@
+import { ItemListStyled } from ".";
 import washingImg from "../../img/washing.webp";
 
 type itemsValue = {
@@ -17,7 +18,7 @@ export const ItemList = ({ items }: itemsValue) => {
       <div className='item'>
         <ul>
           <li className='itemImg'>
-            <img src={washingImg} alt='' />
+            <img src={washingImg} alt='washing machine' />
           </li>
           <li className='itemName'>
             <h2>
@@ -62,5 +63,5 @@ export const ItemList = ({ items }: itemsValue) => {
     );
   });
 
-  return <section className='itemList'>{item}</section>;
+  return <ItemListStyled className='itemList'>{item}</ItemListStyled>;
 };
