@@ -5,6 +5,10 @@ export const StyledNav = styled.nav`
   margin: 3rem 0 0 0;
 
   .search {
+    border: none;
+    height: 2rem;
+    width: 15rem;
+    padding: 0 0.5rem;
   }
 
   .filters {
@@ -16,6 +20,23 @@ export const StyledNav = styled.nav`
       width: 23%;
       display: flex;
       flex-direction: column;
+
+      select {
+        border: none;
+        padding: 0.5rem;
+        background-color: #fff;
+
+        option {
+          border-radius: 0;
+          border: none;
+        }
+      }
+
+      label {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0 0 0.2rem 0;
+      }
     }
   }
 

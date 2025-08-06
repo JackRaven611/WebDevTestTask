@@ -1,24 +1,23 @@
 import { ItemListStyled } from ".";
 import { TEXTS } from "../../CONSTS";
-import { useState } from "react";
 import washingImg from "../../img/washing.webp";
+import { Button } from "../button/Button";
 
-type itemsValue = {
-  items: {
+type filteredItemsValue = {
+  filteredItems: {
+    popularity: number;
     code: string;
     type: string;
     color: string;
-    capacity: string;
+    capacity: number;
     dimensions: string;
     priceDate: string;
-    price: { zł: string; gr: string; currency: string };
+    price: { zl: number; gr: string; currency: string };
     energyClass: string;
-    filters: {
-      addWash: boolean;
-      aiPanel: boolean;
-      inverterMotor: boolean;
-      screen: boolean;
-    };
+    addWash: string;
+    aiPanel: string;
+    inverterMotor: string;
+    screen: string;
     functions: {
       addWash: string;
       aiPanel: string;
@@ -28,10 +27,8 @@ type itemsValue = {
   }[];
 };
 
-export const ItemList = ({ items }: itemsValue) => {
-  const [isButonPressed, setIsButtonPressed] = useState(false);
-
-  const item = items.map((item) => {
+export const ItemList = ({ filteredItems }: filteredItemsValue) => {
+  const item = filteredItems.map((item) => {
     return (
       <div className='item'>
         <ul>
@@ -40,7 +37,7 @@ export const ItemList = ({ items }: itemsValue) => {
           </li>
           <li className='itemName'>
             <h2>
-              {item.code}, {item.type}, {item.color}
+              {item.code}, {item.type}, {item.capacity} kg, {item.color}
             </h2>
           </li>
           <li className='itemParameters'>
@@ -54,7 +51,8 @@ export const ItemList = ({ items }: itemsValue) => {
           <li className='itemParameters'>
             <p>{TEXTS.item.functions}</p>
             <b>
-              {item.functions.addWash}, {item.functions.aiPanel},<br />
+              {item.functions.addWash}, {item.functions.aiPanel} ,
+              <br />
               {item.functions.inverterMotor}, {item.functions.screen}
             </b>
           </li>
@@ -66,14 +64,14 @@ export const ItemList = ({ items }: itemsValue) => {
             <p>{item.priceDate}</p>
           </li>
           <li className='itemPrice'>
-            <b>{item.price.zł}</b>
+            <b>{item.price.zl}</b>
             <div>
               <b>{item.price.gr}</b>
               <b>{item.price.currency}</b>
             </div>
           </li>
           <li className='itemButton'>
-            <div className='button'></div>
+            <Button />
           </li>
         </ul>
       </div>

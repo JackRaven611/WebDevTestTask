@@ -67,7 +67,7 @@ export const ItemListStyled = styled.section`
       }
 
       .itemEnergyClass {
-        margin: 0.5rem 0;
+        margin: 1rem 0;
         display: flex;
         height: auto;
         width: 90%;
@@ -75,7 +75,7 @@ export const ItemListStyled = styled.section`
         text-align: left;
 
         p {
-          width: 30%;
+          width: 40%;
         }
 
         div {
@@ -117,7 +117,7 @@ export const ItemListStyled = styled.section`
       display: flex;
       height: 2rem;
       font-size: 2.5rem;
-      font-weight: 300;
+      font-weight: 400;
       align-self: center;
       line-height: 2rem;
 
@@ -128,6 +128,11 @@ export const ItemListStyled = styled.section`
         display: flex;
         flex-direction: column;
       }
+    }
+
+    .itemButton {
+      display: flex;
+      justify-content: center;
     }
   }
 `;
